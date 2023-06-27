@@ -5,8 +5,8 @@
 
 #include "LCD_Init.h"
 
-uint8_t JoyStick_X();
-uint8_t JoyStick_Y();
+uint16_t JoyStick_X();
+uint16_t JoyStick_Y();
 
 uint8_t Touch_X();
 uint8_t Touch_Y();

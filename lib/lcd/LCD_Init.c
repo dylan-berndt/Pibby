@@ -2,13 +2,17 @@
 
 #include "LCD_Init.h"
 
+void Set_Pin(uint p, bool b) {
+    gpio_put(p, b);
+}
+
 void Init_Pin(uint p, bool b) {
     gpio_init(p);
     gpio_set_dir(p, b ? GPIO_IN : GPIO_OUT);
 }
 
 void Init_SPI() {
-    spi_init(SPI_PORT,4000000);
+    spi_init(SPI_PORT,62500000);
     gpio_set_function(LCD_CLK_PIN,GPIO_FUNC_SPI);
     gpio_set_function(LCD_MOSI_PIN,GPIO_FUNC_SPI);
     gpio_set_function(LCD_MISO_PIN,GPIO_FUNC_SPI);
